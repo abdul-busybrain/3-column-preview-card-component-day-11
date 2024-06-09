@@ -1,0 +1,237 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* variables */
+* {
+  /* ## Colors */
+
+  /* ### Primary */
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* ### Neutral */
+  /* (paragraphs) */
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* (background, headings, buttons) */
+  --Very-light-gray: hsl(0, 0%, 95%);
+
+  /* font */
+  --Lexend-Deca: "Lexend Deca", sans-serif;
+  --Big-Shoulders-Display: "Big Shoulders Display", sans-serif;
+}
+
+body {
+  font-size: 15px;
+}
+button {
+  background-color: var(--Very-light-gray);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 2rem;
+}
+
+.sedan-btn:hover {
+  color: var(--Very-light-gray);
+  border: 1px solid var(--Very-light-gray);
+  background-color: var(--Bright-orange);
+}
+
+.suv-btn:hover {
+  color: var(--Very-light-gray);
+  border: 1px solid var(--Very-light-gray);
+  background-color: var(--Dark-cyan);
+}
+
+.luxury-btn:hover {
+  color: var(--Very-light-gray);
+  border: 1px solid var(--Very-light-gray);
+  background-color: var(--Very-dark-cyan);
+}
+
+p {
+  color: var(--Transparent-white);
+  width: 25ch;
+  text-align: left;
+  font-family: var(--Lexend-Deca);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: var(--Very-light-gray);
+  font-family: var(--Big-Shoulders-Display);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  align-content: space-around;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  min-height: 100vh;
+  margin: auto;
+}
+.card1 {
+  background-color: var(--Bright-orange);
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+.card2 {
+  background-color: var(--Dark-cyan);
+}
+.card3 {
+  background-color: var(--Very-dark-cyan);
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.card1,
+.card2,
+.card3 {
+  text-align: left;
+  padding: 2rem;
+}
+
+.card1 button {
+  color: var(--Bright-orange);
+}
+
+.card2 button {
+  color: var(--Dark-cyan);
+}
+
+.card3 button {
+  color: var(--Very-dark-cyan);
+}
+
+img {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 26.8rem) {
+  body {
+    margin: auto;
+  }
+  .cards {
+    display: flex;
+    /* width: 80%; */
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 2rem auto;
+  }
+
+  .card1 {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+  }
+
+  .card2 {
+  }
+
+  .card3 {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
